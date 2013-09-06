@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="9" >
+
+    <TextView
+        android:id="@+id/funzioni_esami__txtMEDIA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:tag="funzioni_esami__txtMEDIA"
+        android:layout_marginTop="40dp"
+        android:text="@string/funzioni_esami__txtMEDIA"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/funzioni_esami__txtMED"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:tag="funzioni_esami__txtMED"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/funzioni_esami__txtPASSEDEXAMS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:tag="funzioni_esami__txtPASSEDEXAMS"
+        android:text="@string/funzioni_esami__txtPASSEDEXAMS"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/funzioni_esami__txtPASSEDEX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:tag="funzioni_esami__txtPASSEDEX"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/funzioni_esami__txtFAILEDEXAMS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:tag="funzioni_esami__txtFAILEDEXAMS"
+        android:text="@string/funzioni_esami__txtFAILEDEXAMS"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/funzioni_esami__txtFAILEDEX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:tag="funzioni_esami__txtFAILEDEX"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/funzioni_esami__txtTOTCREDITI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:tag="funzioni_esami__txtTOTCREDITI"
+        android:text="@string/funzioni_esami__txtTOTCREDITI"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/funzioni_esami__txtTOTCRED"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:layout_marginBottom="40dp"
+        android:tag="funzioni_esami__txtTOTCRED"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/funzioni_esami__btnBACK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:tag="funzioni_esami__btnBACK"
+        android:text="@string/funzioni_esami__btnBACK" />
+
+
+</LinearLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="7" >
+
+    <DatePicker
+        android:id="@+id/update_esame__datePicker1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp"
+        android:layout_weight="1" />
+
+    <EditText
+        android:id="@+id/update_esame__edtNOME"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/add_esame__txtNOME"
+        android:tag="update_esame__edtNOME" />
+
+    <EditText
+        android:id="@+id/update_esame__edtTOTCREDITI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/add_esame__txtCREDITITOT"
+        android:tag="update_esame__edtTOTCREDITI" />
+
+    <EditText
+        android:id="@+id/update_esame__edtVOTO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/add_esame__txtVOTO"
+        android:tag="update_esame__edtVOTO" />
+
+    <EditText
+        android:id="@+id/update_esame__edtCREDITI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="40dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/add_esame__txtCREDITI"
+        android:tag="update_esame__edtCREDITI" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/update_esame__btnADDESAME"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="47dp"
+            android:layout_toLeftOf="@+id/add_esame__btnANNULLA"
+            android:tag="update_esame__btnADDESAME"
+            android:text="@string/add_esame__btnADDESAME" />
+
+        <Button
+            android:id="@+id/update_esame__btnANNULLA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="47dp"
+            android:tag="update_esame__btnANNULLA"
+            android:text="@string/add_esame__btnANNULLA" />
+
+    </RelativeLayout>
+
+</LinearLayout>

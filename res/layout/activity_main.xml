@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/activity_main__txtBENVENUTO"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:tag="activity_main__txtBENVENUTO"
+        android:layout_marginTop="40dp"
+        android:text="@string/activity_main__txtBENVENUTO"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageButton
+        android:id="@+id/activity_main__btnCALENDAR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="43dp"
+        android:src="@drawable/btnimg"
+        android:tag="activity_main__btnCALENDAR" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/activity_main__btnCALENDAR"
+        android:layout_alignLeft="@+id/activity_main__txtBENVENUTO"
+        android:layout_marginBottom="24dp"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/activity_main__btnAllEsami"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:tag="activity_main__btnAllEsami"
+            android:text="@string/activity_main__btnAllEsami" />
+
+        <Button
+            android:id="@+id/activity_main__btnRES"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:tag="activity_main__btnRES"
+            android:text="@string/activity_main__btnRES" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/activity_main__imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_alignLeft="@+id/linearLayout1"
+        android:layout_marginBottom="44dp"
+        android:src="@drawable/imm_1"
+        android:tag="activity_main__imageView1" />
+
+</RelativeLayout>

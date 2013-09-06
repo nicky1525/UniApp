@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+    <Button
+        android:id="@+id/grid_cell__giorno"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFFFFF" >
+    </Button>
+
+    <TextView
+        android:id="@+id/num_events_per_day"
+        android:layout_width="10dip"
+        android:layout_height="10dip"
+        android:layout_gravity="right" >
+    </TextView>
+
+</RelativeLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical"
+    android:weightSum="40" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/row_esame__txtDATA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:tag="row_esame__txtDATA"
+            android:text="Data"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/row_esame__txtNOME"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:tag="row_esame__txtNOME"
+            android:text="NomeEsame"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/row_esame__txtTOTCREDITI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:tag="row_esame__txtTOTCREDITI"
+            android:text="TotCrediti"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/row_esame__txtVOTO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:tag="row_esame__txtVOTO"
+            android:text="Voto"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/row_esame__txtCREDITI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:tag="row_esame__txtCREDITI"
+            android:text="Crediti"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lista_esami__listView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="37"
+        android:tag="lista_esami__listView1" >
+    </ListView>
+
+    <Button
+        android:id="@+id/lista_esami__btnAddEsame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:tag="lista_esami__btnAddEsame"
+        android:text="@string/lista_esami__btnAddEsame" />
+
+    <Button
+        android:id="@+id/lista_esami__btnBACK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:tag="lista_esami__btnBACK"
+        android:text="@string/lista_esami__btnBACK" />
+
+</LinearLayout>

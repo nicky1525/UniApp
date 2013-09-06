@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:orientation="horizontal"
+    android:weightSum="6" >
+
+    <TextView
+        android:id="@+id/row_esame__txtDATA"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical|center_horizontal"
+        android:tag="row_esame__txtDATA"
+        android:text="Data"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/row_esame__txtNOME"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="2"
+        android:gravity="center_vertical|center_horizontal"
+        android:tag="row_esame__txtNOME"
+        android:text="Nome Esame"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/row_esame__txtTOTCREDITI"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical|center_horizontal"
+        android:tag="row_esame__txtTOTCREDITI"
+        android:text="Tot Crediti"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/row_esame__txtVOTO"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical|center_horizontal"
+        android:tag="row_esame__txtVOTO"
+        android:text="Voto"
+        android:textColor="#FF0000"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/row_esame__txtCREDITI"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical|center_horizontal"
+        android:tag="row_esame__txtCREDITI"
+        android:text="Crediti"
+        android:textSize="18dp" />
+
+</LinearLayout>
