@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UniApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="activity_main__txtBENVENUTO">Benvenuto!</string>
+    <string name="lista_esami__btnAddEsame">Aggiungi Esame</string>
+    <string name="lista_esami__btnRemEsame">Rimuovi Esame</string>
+    <string name="activity_main__btnAllEsami">Tutti gli Esami</string>
+    <string name="activity_main__btnRES">I tuoi Risultati</string>
+    <string name="lista_esami__btnBACK">Chiudi</string>
+    <string name="funzioni_esami__btnBACK">Chiudi</string>
+    <string name="funzioni_esami__txtMEDIA">Media Matematica</string>
+    <string name="funzioni_esami__txtPASSEDEXAMS">Esami superati</string>
+    <string name="funzioni_esami__txtFAILEDEXAMS">Esami non superati</string>
+    <string name="funzioni_esami__txtTOTCREDITI">Totale Crediti </string>
+    <string name="add_esame__btnANNULLA">Annulla</string>
+    <string name="add_esame__btnADDESAME">Aggiungi</string>
+    <string name="add_esame__txtNOME">Inserisci nome esame</string>
+    <string name="add_esame__txtCREDITITOT">Inserisci crediti totali </string>
+    <string name="add_esame__txtVOTO">Inserisci il tuo voto</string>
+    <string name="add_esame__txtCREDITI">Inserisci i tuoi crediti</string>
+    <string name="lista_esami__btnModEsame">Modifica</string>
+    <string name="menu__modifica">Modifica</string>
+    <string name="menu__elimina">Elimina</string>
+    <string name="menu__annulla">Annulla</string>
+    <string name="menu_eliminaTutti">Elimina Tutti</string>
+
+</resources>

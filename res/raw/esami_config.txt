@@ -1,0 +1,45 @@
+#
+# generated on 2013/04/13 09:15:51
+#
+# --table-start--
+dataClass=it.nic.uniapp.db.EsameEntity
+tableName=Tabella1
+# --table-fields-start--
+# --field-start--
+fieldName=id
+columnName=ID
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=data
+columnName=Data
+canBeNull=false
+useGetSet=true
+# --field-end--
+# --field-start--
+fieldName=nome
+columnName=Nome Esame
+canBeNull=false
+useGetSet=true
+# --field-end--
+# --field-start--
+fieldName=totCred
+columnName=TOT Crediti
+canBeNull=false
+useGetSet=true
+# --field-end--
+# --field-start--
+fieldName=voto
+columnName=Voto
+canBeNull=false
+useGetSet=true
+# --field-end--
+# --field-start--
+fieldName=credAcq
+columnName=Crediti Acquisiti
+canBeNull=false
+useGetSet=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################

@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/menu__modifica" 
+        android:title="@string/menu__modifica"></item>
+    <item android:id="@+id/menu__elimina" 
+        android:title="@string/menu__elimina"></item>
+    <item android:id="@+id/menu__annulla" android:title="@string/menu__annulla"></item>
+    <item android:id="@+id/menu__eliminaTutti" android:title="@string/menu_eliminaTutti"></item>
+
+</menu>
