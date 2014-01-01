@@ -180,7 +180,7 @@ public class DBHandler extends Activity implements IDBHandler {
 		if (this.databaseHelper.isOpen() && e != null) {
 
 			Dao<EsameEntity, Integer> dao = databaseHelper.getEsameEntityDao();
-			e.setId(e.getId());
+			//e.setId(e.getId());
 			e.setNome(e.getNome());
 			e.setTotCred(e.getTotCred());
 			e.setVoto(e.getVoto());
