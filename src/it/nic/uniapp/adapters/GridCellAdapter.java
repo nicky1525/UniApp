@@ -59,6 +59,12 @@ public class GridCellAdapter extends BaseAdapter implements OnClickListener {
 	private String getMonthAsString(int i) {
 		return months[i];
 	}
+	
+	private int getMonth(){
+		Calendar calendar = Calendar.getInstance();
+		return calendar.get(Calendar.MONTH);
+		
+	}
 
 	private String getWeekDayAsString(int i) {
 		return weekdays[i];
@@ -134,7 +140,7 @@ public class GridCellAdapter extends BaseAdapter implements OnClickListener {
 		// Current Month Days
 		for (int i = 1; i <= daysInMonth; i++) {
 
-			if (i == getCurrentDayOfMonth()) {
+			if (i == getCurrentDayOfMonth() && getMonth() == currentMonth) {
 				list.add(String.valueOf(i) + "-BLUE" + "-" + getMonthAsString(currentMonth) + "-" + yy);
 			} else {
 				list.add(String.valueOf(i) + "-WHITE" + "-" + getMonthAsString(currentMonth) + "-" + yy);
