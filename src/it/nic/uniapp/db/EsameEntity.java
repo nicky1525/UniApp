@@ -1,13 +1,10 @@
 package it.nic.uniapp.db;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName = "Tabella1")
-public class EsameEntity implements Parcelable {
+public class EsameEntity {
 	public static final String ID = "ID";
 	public static final String DATA = "Data";
 	public static final String NOME = "Nome Esame";
@@ -19,7 +16,7 @@ public class EsameEntity implements Parcelable {
 		
 	}
 	
-	public EsameEntity(String nome, String totCred, String voto, String credAcq){
+	public EsameEntity(String data, String nome, String totCred, String voto, String credAcq){
 		this.data = data;
 		this.nome = nome;
 		this.totCred = totCred;
@@ -27,17 +24,17 @@ public class EsameEntity implements Parcelable {
 		this.credAcq = credAcq;
 	}
 
-	public EsameEntity(Parcel parcel) {
-		this.data = parcel.readString();
-		this.nome = parcel.readString();
-		this.totCred = parcel.readString();
-		this.voto = parcel.readString();
-		this.credAcq = parcel.readString();
-	}
+//	public EsameEntity(Parcel parcel) {
+//		this.data = parcel.readString();
+//		this.nome = parcel.readString();
+//		this.totCred = parcel.readString();
+//		this.voto = parcel.readString();
+//		this.credAcq = parcel.readString();
+//	}
 
 	// PRIVATE MEMBERS
 	@DatabaseField(generatedId = true, columnName = ID)
-	private int id = -1;
+	private int id;
 
 	@DatabaseField(columnName = DATA, useGetSet = true, canBeNull = false)
 	private String data = null;
@@ -64,7 +61,7 @@ public class EsameEntity implements Parcelable {
 	}
 
 	public String getData() {
-		return data;
+		return data.trim();
 	}
 
 	public void setData(String data) {
@@ -72,7 +69,7 @@ public class EsameEntity implements Parcelable {
 	}
 
 	public String getNome() {
-		return nome;
+		return nome.trim();
 	}
 
 	public void setNome(String nome) {
@@ -80,7 +77,7 @@ public class EsameEntity implements Parcelable {
 	}
 
 	public String getTotCred() {
-		return totCred;
+		return totCred.trim();
 	}
 
 	public void setTotCred(String totCred) {
@@ -88,7 +85,7 @@ public class EsameEntity implements Parcelable {
 	}
 
 	public String getVoto() {
-		return voto;
+		return voto.trim();
 	}
 
 	public void setVoto(String voto) {
@@ -96,7 +93,7 @@ public class EsameEntity implements Parcelable {
 	}
 
 	public String getCredAcq() {
-		return credAcq;
+		return credAcq.trim();
 	}
 
 	public void setCredAcq(String credAcq) {
@@ -116,35 +113,35 @@ public class EsameEntity implements Parcelable {
 	public String toString() {
 		return "EsameEntity: Nome: " + getNome() + "ID: " + getId();
 	}
-
-	@Override
-	public int describeContents() {
-		return 0;
-	}
-
-	@Override
-	public void writeToParcel(Parcel dest, int flags) {
-		dest.writeInt(id);
-		dest.writeString(data);
-		dest.writeString(nome);
-		dest.writeString(totCred);
-		dest.writeString(voto);
-		dest.writeString(credAcq);
-
-	}
-
-	public final static Parcelable.Creator CREATOR = new Parcelable.Creator<EsameEntity>() {
-		@Override
-		public EsameEntity createFromParcel(Parcel source) {
-			return new EsameEntity(source);
-		}
-
-		@Override
-		public EsameEntity[] newArray(int size) {
-
-			return new EsameEntity[size];
-		}
-
-	};
+//
+//	@Override
+//	public int describeContents() {
+//		return 0;
+//	}
+//
+//	@Override
+//	public void writeToParcel(Parcel dest, int flags) {
+//		dest.writeInt(id);
+//		dest.writeString(data);
+//		dest.writeString(nome);
+//		dest.writeString(totCred);
+//		dest.writeString(voto);
+//		dest.writeString(credAcq);
+//
+//	}
+//
+//	public final static Parcelable.Creator CREATOR = new Parcelable.Creator<EsameEntity>() {
+//		@Override
+//		public EsameEntity createFromParcel(Parcel source) {
+//			return new EsameEntity(source);
+//		}
+//
+//		@Override
+//		public EsameEntity[] newArray(int size) {
+//
+//			return new EsameEntity[size];
+//		}
+//
+//	};
 
 }
