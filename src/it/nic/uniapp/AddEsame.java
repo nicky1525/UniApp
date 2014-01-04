@@ -2,12 +2,15 @@ package it.nic.uniapp;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 
+import it.nic.uniapp.adapters.EsameAdapter;
 import it.nic.uniapp.core.PageLoader;
 import it.nic.uniapp.core.PageLoader.PageType;
 import it.nic.uniapp.db.DBHandler;
 import it.nic.uniapp.db.DatabaseHelper;
 import it.nic.uniapp.db.EsameEntity;
+import it.nic.uniapp.db.IDBHandler;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,8 +23,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class AddEsame extends Activity {
+	final Calendar c = Calendar.getInstance();
+
+    int maxYear = c.get(Calendar.YEAR) - 20; // this year ( 2014 ) - 20 = 1994
+    int maxMonth = c.get(Calendar.MONTH);
+    int maxDay = c.get(Calendar.DAY_OF_MONTH);
+
+    int minYear = 1960;
+    int minMonth = 0; // january
+    int minDay = 25;
 	
-	private DBHandler db = new DBHandler(this) ;
+	private DBHandler db = new DBHandler(this);
 	private ArrayList<String> stringhe = null;
 	private int id = -1 ;
 	private Button btnAdd = null;
@@ -31,13 +43,14 @@ public class AddEsame extends Activity {
 	private EditText edtVoto = null;
 	private EditText edtCred = null;
 	private DatePicker date = null;
+	private String data = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.add_esame);
 		
-		
+		this.data = "02/02/14";
 		
 		this.btnAdd = (Button)this.findViewById(R.id.add_esame__btnADDESAME);
 		this.btnAnnulla =(Button)this.findViewById(R.id.add_esame__btnANNULLA);
@@ -47,11 +60,43 @@ public class AddEsame extends Activity {
 		this.edtVoto = (EditText)this.findViewById(R.id.add_esame__edtVOTO);
 		this.date = (DatePicker)this.findViewById(R.id.add_esame__datePicker);
 		
+	
+		 int day = date.getDayOfMonth();
+		 int month = date.getMonth() + 1;
+		 int year = date.getYear();
+		
 		this.btnAdd.setOnClickListener(btn_OnClickListener);
 		this.btnAnnulla.setOnClickListener(btn_OnClickListener);
 		this.edtNome.setImeOptions(EditorInfo.IME_ACTION_DONE);
 		
+		
+//		date.init(maxYear - 10, maxMonth, maxDay, new OnDateChangedListener()
+//        {
+//
+//        public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth)
+//        {
+//            if (year < minYear)
+//                view.updateDate(minYear, minMonth, minDay);
+//
+//                if (monthOfYear < minMonth && year == minYear)
+//                view.updateDate(minYear, minMonth, minDay);
+//
+//                if (dayOfMonth < minDay && year == minYear && monthOfYear == minMonth)
+//                view.updateDate(minYear, minMonth, minDay);
+//
+//
+//                if (year > maxYear)
+//                view.updateDate(maxYear, maxMonth, maxDay);
+//
+//                if (monthOfYear > maxMonth && year == maxYear)
+//                view.updateDate(maxYear, maxMonth, maxDay);
+//
+//                if (dayOfMonth > maxDay && year == maxYear && monthOfYear == maxMonth)
+//                view.updateDate(maxYear, maxMonth, maxDay);
+//        }});
 	}
+	
+	
 	
 	private void OnClick(View view) {
 		String tag = view.getTag() != null ? (String) view.getTag() : null;
@@ -63,13 +108,19 @@ public class AddEsame extends Activity {
 		else if (tag != null && tag.equals("add_esame__btnADDESAME")) {
 			
 			Intent i = this.getIntent();		
-			Bundle b = new Bundle();		
-			b.putParcelable("Esame",new EsameEntity(this.edtNome.getText().toString(), this.edtTotCred.getText().toString(), this.edtVoto.getText().toString(), this.edtCred.getText().toString()));
-			
-			i.putExtras(b);
+			i.putExtra("Esame","Esame");
 			setResult(RESULT_OK,i);
+			EsameEntity e = new EsameEntity(this.data, this.edtNome.getText().toString(), this.edtTotCred.getText().toString(), this.edtVoto.getText().toString(), this.edtCred.getText().toString());
+			IDBHandler dbhandler = new DBHandler(this);
+			try {
+				dbhandler.insertNewEsame(e);
+				
+			} catch (SQLException e1) {
+
+				e1.printStackTrace();
+			}
 			
-			this.finish();
+			finish();
 			
 			
 

@@ -26,6 +26,7 @@ public class UpdateEsame extends Activity {
 	private EditText edtVoto = null;
 	private EditText edtCred = null;
 	private DatePicker date = null;
+	private String data = null;
 	private String id = null;
 	private ArrayList<String> stringhe = null;
 
@@ -34,7 +35,7 @@ public class UpdateEsame extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.update_esame);
 
-	
+		this.data = "3/01/14";
 
 		this.btnAdd = (Button) this.findViewById(R.id.update_esame__btnADDESAME);
 		this.btnAnnulla = (Button) this.findViewById(R.id.update_esame__btnANNULLA);
@@ -53,7 +54,7 @@ public class UpdateEsame extends Activity {
 		String voto = bundle.getStringArrayList(ListaEsami.KEY1).get(3);
 		String cred = bundle.getStringArrayList(ListaEsami.KEY1).get(4);
 
-		//this.date.
+		
 		
 		this.edtNome.setText(nome);
 
@@ -83,7 +84,7 @@ public class UpdateEsame extends Activity {
 			Intent i = getIntent();
 			this.stringhe = new ArrayList<String>();
 			stringhe.add(this.id);
-			// stringhe1.add(this.date.toString());
+			stringhe.add(this.data.toString());
 			stringhe.add(this.edtNome.getText().toString());
 			stringhe.add(this.edtTotCred.getText().toString());
 			stringhe.add(this.edtVoto.getText().toString());

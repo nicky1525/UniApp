@@ -79,10 +79,12 @@ public class ListaEsami extends Activity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
+		
+		if(requestCode == 1){
 
-		Bundle b = data.getExtras();
+			Bundle b = data.getExtras();
 
-		if (b != null && b.containsKey(UpdateEsame.KEY2)) {
+			if (b != null && b.containsKey(UpdateEsame.KEY2)) {
 
 			try {
 				dbhandler.updateEsameById(b);
@@ -96,9 +98,10 @@ public class ListaEsami extends Activity {
 			}
 		} else if (b != null && b.containsKey("Esame")) {
 
-			EsameEntity e = (EsameEntity) b.getParcelable("Esame");
+//			EsameEntity e = (EsameEntity) b.getParcelable("Esame");
+//			EsameEntity a = new EsameEntity("data","pollo","5","30","5");
 			try {
-				dbhandler.insertNewEsame(e);
+				
 				lista = dbhandler.getAllEsami();
 				adapter = new EsameAdapter(this, lista);
 				this.listaEsami.setAdapter(adapter);
@@ -108,6 +111,7 @@ public class ListaEsami extends Activity {
 				e1.printStackTrace();
 			}
 		}
+	}
 
 	}
 
@@ -196,8 +200,9 @@ public class ListaEsami extends Activity {
 		}
 
 		else if (tag != null && tag.equals("lista_esami__btnAddEsame")) {
-			this.pageLoader = new PageLoader();
-			pageLoader.startPageDependentActivity(this, PageType.AddEsame, false, null);
+
+			Intent i = new Intent(this, AddEsame.class);
+			startActivityForResult(i, 1);
 
 		}
 
