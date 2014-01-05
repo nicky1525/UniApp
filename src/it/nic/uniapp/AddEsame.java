@@ -1,8 +1,11 @@
 package it.nic.uniapp;
 
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 import it.nic.uniapp.adapters.EsameAdapter;
 import it.nic.uniapp.core.PageLoader;
@@ -11,6 +14,7 @@ import it.nic.uniapp.db.DBHandler;
 import it.nic.uniapp.db.DatabaseHelper;
 import it.nic.uniapp.db.EsameEntity;
 import it.nic.uniapp.db.IDBHandler;
+import it.nic.uniapp.util.Util;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -110,9 +114,11 @@ public class AddEsame extends Activity {
 			Intent i = this.getIntent();		
 			i.putExtra("Esame","Esame");
 			setResult(RESULT_OK,i);
-			EsameEntity e = new EsameEntity(this.data, this.edtNome.getText().toString(), this.edtTotCred.getText().toString(), this.edtVoto.getText().toString(), this.edtCred.getText().toString());
+			
+			EsameEntity e = new EsameEntity(Util.getDateFromDatePicker(date), this.edtNome.getText().toString(), this.edtTotCred.getText().toString(), this.edtVoto.getText().toString(), this.edtCred.getText().toString());
 			IDBHandler dbhandler = new DBHandler(this);
 			try {
+				
 				dbhandler.insertNewEsame(e);
 				
 			} catch (SQLException e1) {

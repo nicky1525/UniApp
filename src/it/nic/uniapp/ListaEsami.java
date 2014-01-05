@@ -26,7 +26,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 public class ListaEsami extends Activity {
-	// manca come aggiungere un esame
+
 	private PageLoader pageLoader = null;
 	private IDBHandler dbhandler = null;
 	private Bundle bundle = null;
@@ -98,8 +98,6 @@ public class ListaEsami extends Activity {
 			}
 		} else if (b != null && b.containsKey("Esame")) {
 
-//			EsameEntity e = (EsameEntity) b.getParcelable("Esame");
-//			EsameEntity a = new EsameEntity("data","pollo","5","30","5");
 			try {
 				
 				lista = dbhandler.getAllEsami();
@@ -135,7 +133,7 @@ public class ListaEsami extends Activity {
 
 			this.stringhe = new ArrayList<String>();
 			this.stringhe.add(Integer.toString(entity.getId()));
-			// this.stringhe.add(entity.getData());
+			this.stringhe.add(entity.getData());
 			this.stringhe.add(entity.getNome());
 			this.stringhe.add(entity.getTotCred());
 			this.stringhe.add(entity.getVoto());

@@ -1,8 +1,12 @@
 package it.nic.uniapp;
 
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import it.nic.uniapp.core.PageLoader;
+import it.nic.uniapp.util.Util;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,7 +30,6 @@ public class UpdateEsame extends Activity {
 	private EditText edtVoto = null;
 	private EditText edtCred = null;
 	private DatePicker date = null;
-	private String data = null;
 	private String id = null;
 	private ArrayList<String> stringhe = null;
 
@@ -35,7 +38,7 @@ public class UpdateEsame extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.update_esame);
 
-		this.data = "3/01/14";
+		
 
 		this.btnAdd = (Button) this.findViewById(R.id.update_esame__btnADDESAME);
 		this.btnAnnulla = (Button) this.findViewById(R.id.update_esame__btnANNULLA);
@@ -48,13 +51,18 @@ public class UpdateEsame extends Activity {
 		this.bundle = this.getIntent().getExtras();
 
 		this.id = bundle.getStringArrayList(ListaEsami.KEY1).get(0);
-		//String date = bundle.getStringArrayList(ListaEsami.KEY1).get(1);
-		String nome = bundle.getStringArrayList(ListaEsami.KEY1).get(1);
-		String totCred = bundle.getStringArrayList(ListaEsami.KEY1).get(2);
-		String voto = bundle.getStringArrayList(ListaEsami.KEY1).get(3);
-		String cred = bundle.getStringArrayList(ListaEsami.KEY1).get(4);
+		String date = bundle.getStringArrayList(ListaEsami.KEY1).get(1);
+		String nome = bundle.getStringArrayList(ListaEsami.KEY1).get(2);
+		String totCred = bundle.getStringArrayList(ListaEsami.KEY1).get(3);
+		String voto = bundle.getStringArrayList(ListaEsami.KEY1).get(4);
+		String cred = bundle.getStringArrayList(ListaEsami.KEY1).get(5);
 
-		
+				
+		Calendar calendar = Util.getCalendarFromString(date);
+		int year = calendar.get(Calendar.YEAR);
+		int month = calendar.get(Calendar.MONTH);
+		int day = calendar.get(Calendar.DAY_OF_MONTH);
+		this.date.updateDate(year, month, day);
 		
 		this.edtNome.setText(nome);
 
@@ -82,9 +90,10 @@ public class UpdateEsame extends Activity {
 
 		else if (tag != null && tag.equals("update_esame__btnADDESAME")) {
 			Intent i = getIntent();
+			
 			this.stringhe = new ArrayList<String>();
 			stringhe.add(this.id);
-			stringhe.add(this.data.toString());
+			stringhe.add(Util.getDateFromDatePicker(this.date));
 			stringhe.add(this.edtNome.getText().toString());
 			stringhe.add(this.edtTotCred.getText().toString());
 			stringhe.add(this.edtVoto.getText().toString());
@@ -105,4 +114,6 @@ public class UpdateEsame extends Activity {
 		}
 
 	};
+	
+
 }

@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.util.Log;
 import android.widget.BaseAdapter;
+import android.widget.Toast;
 
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
@@ -160,8 +161,7 @@ public class DBHandler extends Activity implements IDBHandler {
 			UpdateBuilder<EsameEntity, Integer> updateBuilder = databaseHelper.getEsameEntityDao().updateBuilder();
 			updateBuilder.where().eq(EsameEntity.ID, bundle.getStringArrayList(UpdateEsame.KEY2).get(0));
 
-			// updateBuilder.updateColumnValue(EsameEntity.DATA,
-			// bundle.getStringArrayList(UpdateEsame.KEY2).get(1).toString());
+			//updateBuilder.updateColumnValue(EsameEntity.DATA, bundle.getStringArrayList(UpdateEsame.KEY2).get(1).toString());
 			updateBuilder.updateColumnValue(EsameEntity.NOME, bundle.getStringArrayList(UpdateEsame.KEY2).get(1).toString());
 			updateBuilder.updateColumnValue(EsameEntity.TOTCRED, bundle.getStringArrayList(UpdateEsame.KEY2).get(2).toString());
 			updateBuilder.updateColumnValue(EsameEntity.VOTO, bundle.getStringArrayList(UpdateEsame.KEY2).get(3).toString());
@@ -180,6 +180,7 @@ public class DBHandler extends Activity implements IDBHandler {
 		if (this.databaseHelper.isOpen() && e != null) {
 
 			Dao<EsameEntity, Integer> dao = databaseHelper.getEsameEntityDao();
+
 			int queryResult = dao.create(e);
 
 			if (queryResult != 1) {
@@ -201,20 +202,25 @@ public class DBHandler extends Activity implements IDBHandler {
 
 		int tot = 0;
 		String media = null;
+		try{
+			List<EsameEntity> esami = this.getAllEsami();
+			if (esami != null) {
+				for (EsameEntity e : esami) {
+					int v = Integer.parseInt(e.getVoto());
 
-		List<EsameEntity> esami = this.getAllEsami();
-		if (esami != null) {
-			for (EsameEntity e : esami) {
-				int v = Integer.parseInt(e.getVoto());
+					tot = tot + v;
+					media = Double.toString(tot / esami.size());
 
-				tot = tot + v;
-				media = Double.toString(tot / esami.size());
-
+				}
 			}
+
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			//ritorno un messaggio di errore
 		}
-
+		
 		return media;
-
 	}
 
 	@Override
@@ -275,5 +281,17 @@ public class DBHandler extends Activity implements IDBHandler {
 		return falliti;
 
 	}
+	
+//	public String checkStrings(String string){
+//		if(string != null && !string.equals(" ")){
+//			string = string.trim();
+//			
+//		}else{
+//			Toast.makeText(getApplicationContext(), "Impossibile procedere, tutti i campi vanno riempiti",
+//					   Toast.LENGTH_LONG).show();
+//		}
+//		
+//		return string;
+//	}
 
 }
