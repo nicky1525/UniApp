@@ -47,14 +47,14 @@ public class AddEsame extends Activity {
 	private EditText edtVoto = null;
 	private EditText edtCred = null;
 	private DatePicker date = null;
-	private String data = null;
+
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.add_esame);
 		
-		this.data = "02/02/14";
+	
 		
 		this.btnAdd = (Button)this.findViewById(R.id.add_esame__btnADDESAME);
 		this.btnAnnulla =(Button)this.findViewById(R.id.add_esame__btnANNULLA);
@@ -64,40 +64,10 @@ public class AddEsame extends Activity {
 		this.edtVoto = (EditText)this.findViewById(R.id.add_esame__edtVOTO);
 		this.date = (DatePicker)this.findViewById(R.id.add_esame__datePicker);
 		
-	
-		 int day = date.getDayOfMonth();
-		 int month = date.getMonth() + 1;
-		 int year = date.getYear();
-		
 		this.btnAdd.setOnClickListener(btn_OnClickListener);
 		this.btnAnnulla.setOnClickListener(btn_OnClickListener);
 		this.edtNome.setImeOptions(EditorInfo.IME_ACTION_DONE);
 		
-		
-//		date.init(maxYear - 10, maxMonth, maxDay, new OnDateChangedListener()
-//        {
-//
-//        public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth)
-//        {
-//            if (year < minYear)
-//                view.updateDate(minYear, minMonth, minDay);
-//
-//                if (monthOfYear < minMonth && year == minYear)
-//                view.updateDate(minYear, minMonth, minDay);
-//
-//                if (dayOfMonth < minDay && year == minYear && monthOfYear == minMonth)
-//                view.updateDate(minYear, minMonth, minDay);
-//
-//
-//                if (year > maxYear)
-//                view.updateDate(maxYear, maxMonth, maxDay);
-//
-//                if (monthOfYear > maxMonth && year == maxYear)
-//                view.updateDate(maxYear, maxMonth, maxDay);
-//
-//                if (dayOfMonth > maxDay && year == maxYear && monthOfYear == maxMonth)
-//                view.updateDate(maxYear, maxMonth, maxDay);
-//        }});
 	}
 	
 	

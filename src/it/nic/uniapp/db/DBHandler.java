@@ -161,11 +161,11 @@ public class DBHandler extends Activity implements IDBHandler {
 			UpdateBuilder<EsameEntity, Integer> updateBuilder = databaseHelper.getEsameEntityDao().updateBuilder();
 			updateBuilder.where().eq(EsameEntity.ID, bundle.getStringArrayList(UpdateEsame.KEY2).get(0));
 
-			//updateBuilder.updateColumnValue(EsameEntity.DATA, bundle.getStringArrayList(UpdateEsame.KEY2).get(1).toString());
-			updateBuilder.updateColumnValue(EsameEntity.NOME, bundle.getStringArrayList(UpdateEsame.KEY2).get(1).toString());
-			updateBuilder.updateColumnValue(EsameEntity.TOTCRED, bundle.getStringArrayList(UpdateEsame.KEY2).get(2).toString());
-			updateBuilder.updateColumnValue(EsameEntity.VOTO, bundle.getStringArrayList(UpdateEsame.KEY2).get(3).toString());
-			updateBuilder.updateColumnValue(EsameEntity.CREDACQ, bundle.getStringArrayList(UpdateEsame.KEY2).get(4).toString());
+			updateBuilder.updateColumnValue(EsameEntity.DATA, bundle.getStringArrayList(UpdateEsame.KEY2).get(1).toString());
+			updateBuilder.updateColumnValue(EsameEntity.NOME, bundle.getStringArrayList(UpdateEsame.KEY2).get(2).toString());
+			updateBuilder.updateColumnValue(EsameEntity.TOTCRED, bundle.getStringArrayList(UpdateEsame.KEY2).get(3).toString());
+			updateBuilder.updateColumnValue(EsameEntity.VOTO, bundle.getStringArrayList(UpdateEsame.KEY2).get(4).toString());
+			updateBuilder.updateColumnValue(EsameEntity.CREDACQ, bundle.getStringArrayList(UpdateEsame.KEY2).get(5).toString());
 
 			updateBuilder.update();
 
