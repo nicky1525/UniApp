@@ -118,9 +118,21 @@ public class DBHandler extends Activity implements IDBHandler {
 		return result;
 	}
 	
-	public EsameEntity getEsameByDate(String date)throws SQLException {
+	public List<EsameEntity> getEsameByDate(String date)throws SQLException {
+		List<EsameEntity> result = new ArrayList<EsameEntity>();
 		
-		return null;
+		if (this.databaseHelper == null || !this.databaseHelper.isOpen()) {
+			return result;
+		}
+		
+		QueryBuilder<EsameEntity, Integer> queryBuilder = databaseHelper.getEsameEntityDao().queryBuilder();
+		//queryBuilder.distinct().selectColumns(EsameEntity.ID, EsameEntity.DATA, EsameEntity.NOME, EsameEntity.TOTCRED, EsameEntity.VOTO, EsameEntity.CREDACQ).where().eq(EsameEntity.DATA, date);
+		queryBuilder.where().eq(EsameEntity.DATA, date);
+		PreparedQuery<EsameEntity> preparedQuery = queryBuilder.prepare();
+
+		result = databaseHelper.getEsameEntityDao().query(preparedQuery);
+		System.out.println(result);
+		return result;
 		
 	}
 

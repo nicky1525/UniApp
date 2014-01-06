@@ -17,7 +17,7 @@ public interface IDBHandler {
 	
 	// OTHER METHODS
 	public List<EsameEntity> getAllEsami() throws SQLException;
-	public EsameEntity getEsameByDate(String date)throws SQLException;
+	public List<EsameEntity> getEsameByDate(String date)throws SQLException;
 	public boolean deleteEsameById(int id)throws SQLException;
 	public void deleteAllEsami() throws SQLException;
 	public boolean updateEsameById(Bundle bundle)throws SQLException;

@@ -60,20 +60,20 @@ public class Util {
 	 
 	}
 	
-	public static String getMonthFromString(String m){
+	public static String getDateFormattedFromString(String m){
 		
-	    DateTimeFormatter format = DateTimeFormat.forPattern("MMMM").withLocale(Locale.ITALY);
+	    DateTimeFormatter format = DateTimeFormat.forPattern("dd/MMMM/yyyy").withLocale(Locale.ITALY);
 	    DateTime instance        = format.parseDateTime(m.toLowerCase());
-	    int month = instance.getMonthOfYear();
-	    String month_number;
-	    if (month <10){
-	    	month_number = "0"+String.valueOf(month);
-	    }else{
-	    	 month_number = String.valueOf(month);
-	    }
-	    	
+	    int month = instance.getMonthOfYear()-1;
+	    int day = instance.getDayOfMonth();
+	    int year = instance.getYear();
+	    Calendar c = Calendar.getInstance();
+	    c.set(year, month, day);
+	    SimpleDateFormat f = new SimpleDateFormat("dd/MM/yy");
+	    String data = f.format(c.getTime());
+    	
 	   
-	    return month_number;  
+	    return data;  
 		
 	}
 	

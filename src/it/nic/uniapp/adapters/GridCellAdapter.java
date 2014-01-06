@@ -171,7 +171,7 @@ public class GridCellAdapter extends BaseAdapter implements OnClickListener {
 
 		String[] day_color = list.get(position).split("-");
 		String theday = day_color[0];
-		String themonth = Util.getMonthFromString(day_color[2]);
+		String themonth = day_color[2];
 		String theyear = day_color[3];
 		// if ((!eventsPerMonthMap.isEmpty()) && (eventsPerMonthMap != null)) {
 		// if (eventsPerMonthMap.containsKey(theday)) {
@@ -202,14 +202,20 @@ public class GridCellAdapter extends BaseAdapter implements OnClickListener {
 	@Override
 	public void onClick(View view) {
 		String date_month_year = (String) view.getTag();
+		String date = Util.getDateFormattedFromString(date_month_year);
 		IDBHandler db = new DBHandler(this.context);
 		List<EsameEntity>esami = new ArrayList<EsameEntity>(); 
-		//call getEsameByDate(date_month_year)
 		//ottengo tutti gli esami con quella data e apro una lista con i dettagli
+		try {
+			db.getEsameByDate(date);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		
 		
-		System.out.println(date_month_year);
+		System.out.println(date);
 	}
 
 	private void setCurrentDayOfMonth(int currentDayOfMonth) {
