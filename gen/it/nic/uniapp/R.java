@@ -79,7 +79,7 @@ public final class R {
         public static final int funzioni_esami__txtPASSEDEXAMS=0x7f0a0022;
         public static final int funzioni_esami__txtTOTCRED=0x7f0a0027;
         public static final int funzioni_esami__txtTOTCREDITI=0x7f0a0026;
-        public static final int grid_cell__giorno=0x7f0a0029;
+        public static final int grid_cell_giorno=0x7f0a0029;
         public static final int linearLayout1=0x7f0a0002;
         public static final int lista_esami__btnAddEsame=0x7f0a002c;
         public static final int lista_esami__btnBACK=0x7f0a002d;

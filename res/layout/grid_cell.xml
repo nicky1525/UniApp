@@ -5,7 +5,8 @@
     >
 
     <Button
-        android:id="@+id/grid_cell__giorno"
+        android:id="@+id/grid_cell_giorno"
+        android:tag="grid_cell_giorno"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

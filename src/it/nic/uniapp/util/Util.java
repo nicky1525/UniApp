@@ -3,6 +3,11 @@ package it.nic.uniapp.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
+
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 
 import android.content.Context;
@@ -53,6 +58,23 @@ public class Util {
 		
 		return calendar;
 	 
+	}
+	
+	public static String getMonthFromString(String m){
+		
+	    DateTimeFormatter format = DateTimeFormat.forPattern("MMMM").withLocale(Locale.ITALY);
+	    DateTime instance        = format.parseDateTime(m.toLowerCase());
+	    int month = instance.getMonthOfYear();
+	    String month_number;
+	    if (month <10){
+	    	month_number = "0"+String.valueOf(month);
+	    }else{
+	    	 month_number = String.valueOf(month);
+	    }
+	    	
+	   
+	    return month_number;  
+		
 	}
 	
 

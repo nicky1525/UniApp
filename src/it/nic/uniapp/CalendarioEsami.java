@@ -46,27 +46,31 @@ public class CalendarioEsami extends Activity {
 
 		this.calendar_view = (GridView) this.findViewById(R.id.calendario_esami__calendar);
 		this.btnBack = (Button) this.findViewById(R.id.calendario_esami__btnBack);
+		
 		this.currentMonth = (TextView) this.findViewById(R.id.calendario_esami__current_month);
 		this.prevMonth = (ImageButton) this.findViewById(R.id.calendario_esami__prevMonth);
 		this.follMonth = (ImageButton) this.findViewById(R.id.calendario_esami__follMonth);
 		this.calendarDays = (LinearLayout)this.findViewById(R.id.calendario_esami__giorni);
 		
 		this.btnBack.setOnClickListener(btn_OnClickListener);
+	
 		this.prevMonth.setOnClickListener(btn_OnClickListener);
 		this.follMonth.setOnClickListener(btn_OnClickListener);
 		this.currentMonth.setText(DateFormat.format(dateTemplate, calendar.getTime()));
 
-		adapter = new GridCellAdapter(getApplicationContext(), R.id.grid_cell__giorno, month, year);
+		adapter = new GridCellAdapter(getApplicationContext(), R.id.grid_cell_giorno, month, year);
 		adapter.notifyDataSetChanged();
 		calendar_view.setAdapter(adapter);
+		
 	}
 
 	private void setGridCellAdapterToDate(int month, int year) {
-		adapter = new GridCellAdapter(getApplicationContext(), R.id.grid_cell__giorno, month, year);
+		adapter = new GridCellAdapter(getApplicationContext(), R.id.grid_cell_giorno, month, year);
 		calendar.set(year, month - 1, calendar.get(Calendar.DAY_OF_MONTH));
 		currentMonth.setText(DateFormat.format(dateTemplate, calendar.getTime()));
 		adapter.notifyDataSetChanged();
 		calendar_view.setAdapter(adapter);
+	
 	}
 
 	private void OnClick(View view) {
@@ -97,6 +101,11 @@ public class CalendarioEsami extends Activity {
 			
 			setGridCellAdapterToDate(month,year);
 
+		}
+		
+		if (tag != null && tag.equals("grid_cell_giorno")) {
+			//System.out.println(this.btnDay.getText().toString());
+			
 		}
 
 	}

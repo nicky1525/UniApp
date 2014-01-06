@@ -117,6 +117,12 @@ public class DBHandler extends Activity implements IDBHandler {
 
 		return result;
 	}
+	
+	public EsameEntity getEsameByDate(String date)throws SQLException {
+		
+		return null;
+		
+	}
 
 	@Override
 	public void deleteAllEsami() throws SQLException {

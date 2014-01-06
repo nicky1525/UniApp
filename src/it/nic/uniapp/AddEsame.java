@@ -53,9 +53,7 @@ public class AddEsame extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.add_esame);
-		
-	
-		
+
 		this.btnAdd = (Button)this.findViewById(R.id.add_esame__btnADDESAME);
 		this.btnAnnulla =(Button)this.findViewById(R.id.add_esame__btnANNULLA);
 		this.edtCred = (EditText)this.findViewById(R.id.add_esame__edtCREDITI);
