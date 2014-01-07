@@ -27,6 +27,7 @@
         <activity android:name="CalendarioEsami"></activity>
         <activity android:name="AddEsame"></activity>
         <activity android:name="UpdateEsame"></activity>
+        <activity android:name="PopUpWindow"></activity>
     </application>
 
 </manifest>

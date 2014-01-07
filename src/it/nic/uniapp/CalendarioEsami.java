@@ -58,14 +58,14 @@ public class CalendarioEsami extends Activity {
 		this.follMonth.setOnClickListener(btn_OnClickListener);
 		this.currentMonth.setText(DateFormat.format(dateTemplate, calendar.getTime()));
 
-		adapter = new GridCellAdapter(getApplicationContext(), R.id.grid_cell_giorno, month, year);
+		adapter = new GridCellAdapter(getApplicationContext(), R.id.grid_cell_giorno, month, year,this);
 		adapter.notifyDataSetChanged();
 		calendar_view.setAdapter(adapter);
 		
 	}
 
 	private void setGridCellAdapterToDate(int month, int year) {
-		adapter = new GridCellAdapter(getApplicationContext(), R.id.grid_cell_giorno, month, year);
+		adapter = new GridCellAdapter(getApplicationContext(), R.id.grid_cell_giorno, month, year,this);
 		calendar.set(year, month - 1, calendar.get(Calendar.DAY_OF_MONTH));
 		currentMonth.setText(DateFormat.format(dateTemplate, calendar.getTime()));
 		adapter.notifyDataSetChanged();

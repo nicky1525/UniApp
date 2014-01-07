@@ -84,11 +84,14 @@ public final class R {
         public static final int lista_esami__btnAddEsame=0x7f0a002c;
         public static final int lista_esami__btnBACK=0x7f0a002d;
         public static final int lista_esami__listView1=0x7f0a002b;
-        public static final int menu__annulla=0x7f0a0037;
-        public static final int menu__elimina=0x7f0a0036;
-        public static final int menu__eliminaTutti=0x7f0a0038;
-        public static final int menu__modifica=0x7f0a0035;
+        public static final int menu__annulla=0x7f0a003a;
+        public static final int menu__elimina=0x7f0a0039;
+        public static final int menu__eliminaTutti=0x7f0a003b;
+        public static final int menu__modifica=0x7f0a0038;
         public static final int num_events_per_day=0x7f0a002a;
+        public static final int popup__btnclose=0x7f0a0030;
+        public static final int popup__element=0x7f0a002e;
+        public static final int popup__listview=0x7f0a002f;
         public static final int row_esame__txtCREDITI=0x7f0a001f;
         public static final int row_esame__txtDATA=0x7f0a001b;
         public static final int row_esame__txtNOME=0x7f0a001c;
@@ -101,13 +104,13 @@ public final class R {
         public static final int textView5=0x7f0a0016;
         public static final int textView6=0x7f0a0017;
         public static final int textView7=0x7f0a0018;
-        public static final int update_esame__btnADDESAME=0x7f0a0033;
-        public static final int update_esame__btnANNULLA=0x7f0a0034;
-        public static final int update_esame__datePicker1=0x7f0a002e;
-        public static final int update_esame__edtCREDITI=0x7f0a0032;
-        public static final int update_esame__edtNOME=0x7f0a002f;
-        public static final int update_esame__edtTOTCREDITI=0x7f0a0030;
-        public static final int update_esame__edtVOTO=0x7f0a0031;
+        public static final int update_esame__btnADDESAME=0x7f0a0036;
+        public static final int update_esame__btnANNULLA=0x7f0a0037;
+        public static final int update_esame__datePicker1=0x7f0a0031;
+        public static final int update_esame__edtCREDITI=0x7f0a0035;
+        public static final int update_esame__edtNOME=0x7f0a0032;
+        public static final int update_esame__edtTOTCREDITI=0x7f0a0033;
+        public static final int update_esame__edtVOTO=0x7f0a0034;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -117,7 +120,8 @@ public final class R {
         public static final int funzioni_esami=0x7f030004;
         public static final int grid_cell=0x7f030005;
         public static final int lista_esami=0x7f030006;
-        public static final int update_esame=0x7f030007;
+        public static final int popup_window=0x7f030007;
+        public static final int update_esame=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f090000;

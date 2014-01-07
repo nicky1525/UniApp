@@ -1,6 +1,9 @@
 package it.nic.uniapp.adapters;
 
+import it.nic.uniapp.PopUpWindow;
 import it.nic.uniapp.R;
+import it.nic.uniapp.core.PageLoader;
+import it.nic.uniapp.core.PageLoader.PageType;
 import it.nic.uniapp.db.DBHandler;
 import it.nic.uniapp.db.EsameEntity;
 import it.nic.uniapp.db.IDBHandler;
@@ -14,16 +17,24 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.view.Display;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
+import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.TableLayout;
+import android.widget.TextView;
 
 import java.util.Calendar;
 
@@ -41,15 +52,19 @@ public class GridCellAdapter extends BaseAdapter implements OnClickListener {
 	private int currentWeekDay = 0;
 	private Button selectedDayMonthYearButton;
 	private Button gridcell = null;
+	private List<EsameEntity>esami = null;
+	private PopupWindow pw = null;
+	private Activity activity = null;
 
 	// private TextView num_events_per_day;
 	// private final HashMap<String, Integer> eventsPerMonthMap;
 	private final SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy");
 
-	public GridCellAdapter(Context context, int textViewResourceId, int month, int year) {
+	public GridCellAdapter(Context context, int textViewResourceId, int month, int year, Activity a) {
 		super();
 		this.context = context;
 		this.list = new ArrayList<String>();
+		this.activity = a;
 		Calendar calendar = Calendar.getInstance();
 		setCurrentDayOfMonth(calendar.get(Calendar.DAY_OF_MONTH));
 		setCurrentWeekDay(calendar.get(Calendar.DAY_OF_WEEK));
@@ -204,19 +219,51 @@ public class GridCellAdapter extends BaseAdapter implements OnClickListener {
 		String date_month_year = (String) view.getTag();
 		String date = Util.getDateFormattedFromString(date_month_year);
 		IDBHandler db = new DBHandler(this.context);
-		List<EsameEntity>esami = new ArrayList<EsameEntity>(); 
+		
+		this.esami = new ArrayList<EsameEntity>(); 
 		//ottengo tutti gli esami con quella data e apro una lista con i dettagli
 		try {
-			db.getEsameByDate(date);
+			this.esami = db.getEsameByDate(date);
+			pw = new PopupWindow(this.activity);
+			 LinearLayout layout = new LinearLayout(this.activity);
+		     LayoutParams params;
+		     //ListView lista = (ListView)this.activity.findViewById(R.id.popup__listview);
+		     LinearLayout mainLayout = new LinearLayout(this.activity);
+		     boolean click = true;
+		     TextView v = new TextView(this.context);
+		     v.setText("ciao");
+		     Button but = new Button(this.context);
+		     but.setText("chiudi!");
+		     but.setOnClickListener(new OnClickListener(){
+		    	 public void onClick(View v) {
+		    		 pw.dismiss();
+		    	 }
+		    	 
+		     });
+		     
+		     params = new LayoutParams(LayoutParams.WRAP_CONTENT,
+		    	        LayoutParams.WRAP_CONTENT);
+		    	      layout.setOrientation(LinearLayout.VERTICAL);
+		    	      layout.addView(v,params);
+		    	      pw.setContentView(layout);
+		    	      
+		    	      mainLayout.addView(but, params);
+		    	      pw.setContentView(mainLayout);
+		    	     
+		      
+		    LayoutInflater inflater = (LayoutInflater)this.activity .getSystemService(Context.LAYOUT_INFLATER_SERVICE); 
+		    layout = (LinearLayout)inflater.inflate(R.layout.popup_window,(ViewGroup)this.activity.findViewById(R.id.popup__element));  
+		    pw.showAtLocation(layout, Gravity.BOTTOM, 10, 10);
+			
+						
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		
-		
 		System.out.println(date);
 	}
+	
 
 	private void setCurrentDayOfMonth(int currentDayOfMonth) {
 		this.currentDayOfMonth = currentDayOfMonth;
