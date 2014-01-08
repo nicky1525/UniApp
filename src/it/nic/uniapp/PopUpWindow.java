@@ -2,14 +2,10 @@ package it.nic.uniapp;
 
 
 
-import it.nic.uniapp.adapters.GridCellAdapter;
 import it.nic.uniapp.db.EsameEntity;
-
 import java.util.List;
-
 import android.app.Activity;
 import android.content.Context;
-import android.os.Bundle;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;

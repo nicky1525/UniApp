@@ -1,11 +1,8 @@
 package it.nic.uniapp;
 
-import java.text.ParseException;
+
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-
-import it.nic.uniapp.core.PageLoader;
 import it.nic.uniapp.util.Util;
 import android.app.Activity;
 import android.content.Context;
@@ -15,7 +12,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
-
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -131,7 +127,7 @@ public class UpdateEsame extends Activity {
 	        float x = event.getRawX() + w.getLeft() - scrcoords[0];
 	        float y = event.getRawY() + w.getTop() - scrcoords[1];
 
-	        //Log.d("Activity", "Touch event "+event.getRawX()+","+event.getRawY()+" "+x+","+y+" rect "+w.getLeft()+","+w.getTop()+","+w.getRight()+","+w.getBottom()+" coords "+scrcoords[0]+","+scrcoords[1]);
+	        
 	        if (event.getAction() == MotionEvent.ACTION_UP && (x < w.getLeft() || x >= w.getRight() || y < w.getTop() || y > w.getBottom()) ) { 
 
 	            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);

@@ -32,7 +32,6 @@ public class Util {
 	    int year =  datePicker.getYear();
 	    
 	    Calendar cal = Calendar.getInstance();
-//	    cal.add(Calendar.DATE, 1);
 	    cal.set(year, month, day);
 	    SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yy");
 	    System.out.println(cal.getTime());

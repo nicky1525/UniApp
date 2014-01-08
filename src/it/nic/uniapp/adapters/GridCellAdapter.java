@@ -69,10 +69,6 @@ public class GridCellAdapter extends BaseAdapter implements OnClickListener {
 		setCurrentDayOfMonth(calendar.get(Calendar.DAY_OF_MONTH));
 		setCurrentWeekDay(calendar.get(Calendar.DAY_OF_WEEK));
 
-		// Log.d(tag, "New Calendar:= " + calendar.getTime().toString());
-		// Log.d(tag, "CurrentDayOfWeek :" + getCurrentWeekDay());
-		// Log.d(tag, "CurrentDayOfMonth :" + getCurrentDayOfMonth());
-
 		printMonth(month, year);
 	}
 

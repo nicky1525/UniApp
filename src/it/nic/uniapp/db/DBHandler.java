@@ -299,17 +299,5 @@ public class DBHandler extends Activity implements IDBHandler {
 		return falliti;
 
 	}
-	
-//	public String checkStrings(String string){
-//		if(string != null && !string.equals(" ")){
-//			string = string.trim();
-//			
-//		}else{
-//			Toast.makeText(getApplicationContext(), "Impossibile procedere, tutti i campi vanno riempiti",
-//					   Toast.LENGTH_LONG).show();
-//		}
-//		
-//		return string;
-//	}
 
 }
