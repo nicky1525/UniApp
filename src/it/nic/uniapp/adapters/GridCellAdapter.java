@@ -260,6 +260,20 @@ public class GridCellAdapter extends BaseAdapter implements OnClickListener {
 		System.out.println(date);
 	}
 	
+	//devo ciclare tutti i giorni e verificare se in quella data ci sono esami e colorare il giorno corrispondente
+	private void checkEsami() {
+		List<EsameEntity>lista = new ArrayList<EsameEntity>();
+		IDBHandler db = new DBHandler (this.context);
+		try {
+			lista = db.getAllEsami();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		for (EsameEntity e : lista){
+			
+		}
+	}
 
 	private void setCurrentDayOfMonth(int currentDayOfMonth) {
 		this.currentDayOfMonth = currentDayOfMonth;

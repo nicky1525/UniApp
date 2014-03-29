@@ -44,11 +44,10 @@ public final class R {
         public static final int calendar_next_arrow=0x7f020001;
         public static final int calendar_prev_arrow=0x7f020002;
         public static final int cell_bg=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int imm_1=0x7f020005;
-        public static final int left_arrow=0x7f020006;
-        public static final int right_arrow=0x7f020007;
-        public static final int uni_app_launcher=0x7f020008;
+        public static final int imm_1=0x7f020004;
+        public static final int left_arrow=0x7f020005;
+        public static final int right_arrow=0x7f020006;
+        public static final int uniapp_launcher=0x7f020007;
     }
     public static final class id {
         public static final int activity_main__btnAllEsami=0x7f0a0003;

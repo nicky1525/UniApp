@@ -1,8 +1,14 @@
 package it.nic.uniapp;
 
 import it.nic.uniapp.adapters.GridCellAdapter;
+import it.nic.uniapp.db.DBHandler;
+import it.nic.uniapp.db.EsameEntity;
+import it.nic.uniapp.db.IDBHandler;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 import android.app.Activity;
@@ -63,6 +69,8 @@ public class CalendarioEsami extends Activity {
 		calendar_view.setAdapter(adapter);
 		
 	}
+	
+	
 
 	private void setGridCellAdapterToDate(int month, int year) {
 		adapter = new GridCellAdapter(getApplicationContext(), R.id.grid_cell_giorno, month, year,this);
